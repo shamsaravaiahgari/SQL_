@@ -1,4 +1,4 @@
-from core_1.utils_sql_1 import *
+from Assignment_1.core_1.utils_sql_1 import *
 import unittest
 
 class TestMyFunc(unittest.TestCase):
