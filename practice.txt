@@ -1,0 +1,24 @@
+-- creating stored procedures
+
+CREATE PROCEDURE uspGetContact 
+AS 
+SELECT TOP 1 ContactID, FirstName, LastName 
+FROM Person.Contact 
+
+--executing stored procedure
+
+EXEC uspGetContact
+
+--altering sp with to include parameters
+
+ALTER PROCEDURE uspGetContact @LastName NVARCHAR(50) 
+AS 
+SELECT TOP 1 ContactID, FirstName, LastName 
+FROM Person.Contact 
+WHERE LastName = @LastName 
+
+--executing cp
+
+EC uspGetContact 'Alberts' 
+
+EXEC uspGetContact @LastName='Alberts'
